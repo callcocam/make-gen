@@ -43,6 +43,7 @@ var zfValidatorHead = function zfValidatorHead (prop){
     file+='use Zend\\Validator\\EmailAddress;<br>' ;
     file+='use Zend\\Validator\\NotEmpty;<br>';
     file+='use Zend\\Validator\\StringLength;<br>';
+    file+='use Zend\\Validator\\InArray;<br>';
     file+='<br>';
     file+=$.sprintf('class %sValidator extends AbstractFilter <br>',prop.model_name);
     file+='<br>';
@@ -50,6 +51,7 @@ var zfValidatorHead = function zfValidatorHead (prop){
     file+=t + "<br>";
     file+=t + "public function __construct(ContainerInterface $container) <br>";
     file+=t + "{ <br>";
+    file+=t + " parent::__construct($container);";
     file+=t + "<br>";
 
     return (file);

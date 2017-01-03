@@ -55,7 +55,10 @@ var toView = function toView (name, type)
     if(type == 'view'){
         form ="echo $this->formLabel($form->get('" + name + "'));" + "<br>";
         form+="echo $this->formElement($form->get('" + name + "'));" + "<br>";
-        form+="echo $this->formElementErrors($form->get('" + name + "'));";
+        form+="echo $this->formElementErrors($form->get('" + name + "'));" + "<br>" + "<br>";
+        form+="$this->input('" + name + "');" + "<br>";
+        form+="$this->label('" + name + "');" + "<br>";
+        form+="$this->errors('" + name + "');" + "<br>";
         form+="<br>";
     } else if (type == 'row') {
         form = "echo $this->formElementErrors($form->get('" + name + "'));";

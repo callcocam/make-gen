@@ -170,7 +170,7 @@ $(document).ready(function() {
 
     $('#form_view').html(zfView(form, 'view'));
 
-    $('#form_row').html(zfView(form, 'row'));
+    $('#form_row').text(zfView(form, 'row'));
 
     $('#form_view_helper').html(zfViewHelper());
 
@@ -438,7 +438,7 @@ var formValidatorDate = function formValidatorOther (l){
     var validation = '';
     if(l.date_validation){
         validation +=$.sprintf("%s[" + "<br>",tttt);
-            validation +=$.sprintf("%s'name' => 'Between'" + "<br>",ttttt);
+            validation +=$.sprintf("%s'name' => 'Between'," + "<br>",ttttt);
             validation +=$.sprintf("%s'options' => [" + "<br>",ttttt);
                 if(l.date_validation.min != ''){
                     validation +=$.sprintf("%s'min' => '%s', <br>",tttttt, l.date_validation.min);
@@ -525,8 +525,8 @@ var formValidatorDropdown = function formValidatorDropdown (select){
         tokenForm =$.sprintf("%s[ <br>",tttt);
         tokenForm +=$.sprintf("%s'name' => InArray::class, <br>",ttttt)
         tokenForm +=$.sprintf("%s'options' => [ <br>",ttttt);
-        tokenForm +=$.sprintf("%s'haystack' => [" + key  + "] <br>",ttttttt);
-        tokenForm +=$.sprintf("%s'messages' => [, <br>",tttttt);
+        tokenForm +=$.sprintf("%s'haystack' => [%s], <br>",ttttttt,key);
+        tokenForm +=$.sprintf("%s'messages' => [ <br>",tttttt);
         tokenForm +=$.sprintf("%sNotEmpty::IS_EMPTY => '%s' <br>",tttttt,select.number_notinarray);
         tokenForm +=$.sprintf("%s], <br>",tttttt);
         tokenForm +=$.sprintf("%s], <br>",ttttt);

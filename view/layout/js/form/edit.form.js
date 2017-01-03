@@ -180,7 +180,13 @@ var editLineText = function editLineText (id, type){
         liClass.find('input[name="filewordcount_min"]').val(filewordcountMinEdit);
         liClass.find('input[name="filewordcount_max"]').val(filewordcountMaxEdit);
     }
+    if(type == 'line_hidden'){
+        defaultValues(liClass, labelEdit, nameEdit, placeholderEdit, requiredEdit, minEdit, maxEdit, classEdit, idEdit);
 
+    }
+
+
+    console.log(type);
     console.log(liId);
     console.log(liClass);
 
